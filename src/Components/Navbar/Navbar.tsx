@@ -5,8 +5,18 @@ const Navbar: React.FC = () => {
   return (
     <Flex bg="white" height="44px" padding="6px 12px">
       <Flex align="center">
-        <Image src="/images/redditLogo.png" height="5rem" />
+        <Image src="/images/redditFace.svg" height="2.5rem" />
+        <Image
+          src="/images/redditText.svg"
+          height="4rem"
+          display={{ base: "none", md: "unset" }}
+        />
       </Flex>
+      {/*
+        <Directory />
+        <SearchInput/>
+        <RightContent/>
+        */}
     </Flex>
   );
 };
