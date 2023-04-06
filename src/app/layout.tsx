@@ -2,6 +2,7 @@
 
 import Navbar from "@/Components/Navbar/Navbar";
 import { ChakraProvider } from "@chakra-ui/react";
+import { RecoilRoot } from "recoil";
 import { theme } from "../Chakra/Theme";
 
 /*export const metadata = {
@@ -17,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ChakraProvider theme={theme}>
-          <Navbar />
-          {children}
-        </ChakraProvider>
+        <RecoilRoot>
+          <ChakraProvider theme={theme}>
+            <Navbar />
+            {children}
+          </ChakraProvider>
+        </RecoilRoot>
       </body>
     </html>
   );

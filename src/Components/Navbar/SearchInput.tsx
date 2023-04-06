@@ -1,4 +1,4 @@
-import { PhoneIcon } from "@chakra-ui/icons";
+import { PhoneIcon, SearchIcon } from "@chakra-ui/icons";
 import {
   CheckboxIcon,
   Flex,
@@ -15,24 +15,26 @@ type SearchInputProps = {
 
 const SearchInput: React.FC<SearchInputProps> = () => {
   return (
-    <Flex>
+    <Flex flexGrow={1} align="center">
       <InputGroup>
         <InputLeftElement
           pointerEvents="none"
-          children={<PhoneIcon color="gray.300" />}
+          children={<SearchIcon color="gray.300" mb={1} />}
         />
-        <Input type="tel" placeholder="Phone number" />
-      </InputGroup>
-
-      <InputGroup>
-        <InputLeftElement
-          pointerEvents="none"
-          color="gray.300"
-          fontSize="1.2em"
-          children="$"
+        <Input
+          type="tel"
+          placeholder="search"
+          fontSize="10pt"
+          _placeholder={{ color: "gery.500" }}
+          _hover={{ bg: "white", border: "1px solid", borderColor: "blue.500" }}
+          _focus={{
+            outline: "none",
+            border: "1px solid",
+            borderColor: "blue.500",
+          }}
+          height="34px"
+          bg="grey.50"
         />
-        <Input placeholder="Enter amount" />
-        <InputRightElement children={<CheckboxIcon color="green.500" />} />
       </InputGroup>
     </Flex>
   );
